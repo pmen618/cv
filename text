@@ -1,0 +1,62 @@
+
+
+<nav class="scrolltop">    
+    <h2><a href="#top" id="scrolltop">Top of Page</a></h2>
+</nav>
+
+<div>
+ <p>Simple navigation fade in when you scroll. Feel free to scroll down the page.</p>
+</div>
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:100);
+
+#scrolltop {
+    background-color: black !important;
+    color:orange;
+  text-align: center;
+    border-radius: 2px;
+    border: 0;
+    outline: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+    bottom: 50px;
+    height: 50px;
+    position: fixed;
+    z-index:9999;
+  padding-top: 20px;
+}
+div {
+  height: 1000px;
+  text-align: center;
+  p {
+    font-size: 2em;
+    position: fixed;
+    width: 75%;
+    left: 12.5%;
+    top: 75px;
+  }
+}
+
+
+.scrolltop {
+ display:none;
+}
+
+
+
+/// Scroll fade in when 100px from the top 
+$(window).scroll(function() {
+  if ($(this).scrollTop()> 100) {
+    $('nav').fadeIn();
+   } else {
+    $('nav').fadeOut();
+   }
+});
+
+/// Scroll back to top
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+
